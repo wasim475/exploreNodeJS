@@ -1,9 +1,12 @@
-const EventEmitter = require('node:events');
+const mitter = require('node:events');
 
-class MyEmitter extends EventEmitter {}
+class FoodisReady extends mitter {}
 
-const myEmitter = new MyEmitter();
-myEmitter.on('event', () => {
-  console.log('an event occurred!');
+const foodReady = new FoodisReady();
+foodReady.on('food', () => {
+  console.log('food is ready');
 });
-myEmitter.emit('event');
+foodReady.on('coolDrink', () => {
+  console.log('it is very harmfull for your health');
+});
+foodReady.emit('coolDrink');
